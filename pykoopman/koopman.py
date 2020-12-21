@@ -210,7 +210,7 @@ class Koopman(BaseEstimator):
                     y[k + 1] = self.predict(y[k].reshape(1, -1))
             else:
                 for k in range(n_steps - 1):
-                    y[k + 1] = self.predict(y[k].reshape(1, -1), u[k + 1])
+                    y[k + 1] = self.predict(y[k].reshape(1, -1), u[k + 1].reshape(1, -1))
 
         return y
 
